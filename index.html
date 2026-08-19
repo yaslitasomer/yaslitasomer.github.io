@@ -103,12 +103,24 @@
             margin-bottom: 5px;
             display: list-item;
         }
+
+        .cursor {
+            display: inline-block;
+            color: #58a6ff;
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Ömer Yaslıtaş _</h1>
+    <h1>Ömer Yaslıtaş <span class="cursor">_</span></h1>
     <div class="contact-links">
         [<a href="mailto:omer.yaslitas@metu.edu.tr">email ↗</a>]
         [<a href="https://github.com/yaslitasomer" target="_blank">github ↗</a>]
