@@ -9,30 +9,34 @@
         /* Core Settings and Dark Theme */
         body {
             background-color: #0d1117;
-            /* GitHub dark mode style background */
             color: #c9d1d9;
-            /* Light grey text */
             font-family: 'Courier New', Courier, monospace;
-            /* Typewriter/Terminal aesthetic */
             line-height: 1.6;
             margin: 0 auto;
-            max-width: 800px;
+            max-width: 850px;
             padding: 40px 20px;
         }
 
         /* Typography and Links */
-        h1,
-        h2,
-        h3 {
+        h1 {
             color: #58a6ff;
-            /* Soft pastel blue accent */
             font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #58a6ff;
+            font-weight: normal;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
 
         a {
             color: #8b949e;
             text-decoration: none;
             border-bottom: 1px dashed #8b949e;
+            transition: color 0.2s;
         }
 
         a:hover {
@@ -40,37 +44,62 @@
             border-bottom: 1px solid #58a6ff;
         }
 
-        /* Lists and Project Layout */
-        .project-list,
-        .experience-list {
+        .contact-links {
+            margin-bottom: 25px;
+            font-size: 0.9em;
+        }
+
+        /* Lists and Layout */
+        .list-container {
             list-style-type: none;
             padding: 0;
         }
 
-        .project-list li,
-        .experience-list li {
-            margin-bottom: 15px;
+        .list-container li {
+            margin-bottom: 18px;
             display: flex;
             align-items: baseline;
             flex-wrap: wrap;
-            /* Allows text to wrap on smaller screens */
         }
 
-        .project-name {
+        .item-title {
             font-weight: bold;
-            min-width: 180px;
+            min-width: 200px;
             color: #e6edf3;
         }
 
-        .project-desc {
+        /* Linkli başlıklar için özel ayar */
+        a.item-title {
+            border-bottom: 1px dashed #e6edf3;
+        }
+
+        a.item-title:hover {
+            color: #58a6ff;
+            border-bottom: 1px solid #58a6ff;
+        }
+
+        .item-desc {
             flex: 1;
             min-width: 250px;
         }
 
-        .tech-stack {
+        .item-meta {
             color: #8b949e;
             font-size: 0.9em;
             margin-left: 10px;
+        }
+
+        .bullet-points {
+            margin-top: 5px;
+            margin-bottom: 0;
+            padding-left: 20px;
+            color: #8b949e;
+            font-size: 0.95em;
+        }
+
+        .bullet-points li {
+            margin-bottom: 5px;
+            display: list-item;
         }
     </style>
 </head>
@@ -78,56 +107,120 @@
 <body>
 
     <h1>Ömer Yaslıtaş ⋆˙⟡</h1>
-    <p>[<a href="https://github.com/omeryaslitas">github ↗</a>]</p>
+    <div class="contact-links">
+        [<a href="mailto:omer.yaslitas@metu.edu.tr">email ↗</a>]
+        [<a href="https://github.com/yaslitasomer" target="_blank">github ↗</a>]
+        [<a href="https://linkedin.com/in/ömer-yaslıtaş" target="_blank">linkedin ↗</a>]
+    </div>
 
     <p>
-        Computer Engineering student. I focus on Artificial Intelligence, Data Science, and 3D data processing.
-        Currently exploring Retrieval-Augmented Generation (RAG) architectures and local Large Language Models.
+        Computer Engineering student. My primary focus lies at the intersection of Artificial Intelligence, Data
+        Science, and Machine Learning. I enjoy building real-world AI applications, experimenting with local LLMs, and
+        processing 3D data architectures.
     </p>
 
     <p>
-        <b>languages:</b> python · c++ · c · sql · haskell · verilog<br>
-        <b>frameworks & tools:</b> langchain · streamlit · chromadb · linux/ubuntu · git
+        <b>languages:</b> python · java · c++ · c · sql · haskell · verilog<br>
+        <b>frameworks & tools:</b> langchain · streamlit · docker · grafana · android studio · linux/ubuntu<br>
+        <b>spoken:</b> english (proficient) · turkish (native) · russian (beginner) · german (learning)
     </p>
 
     <hr style="border: 0; border-top: 1px solid #30363d; margin: 30px 0;">
 
-    <h2>Experience</h2>
-    <ul class="experience-list">
+    <h2>Education</h2>
+    <ul class="list-container">
         <li>
-            <span class="project-name">Güriş Teknoloji A.Ş.</span>
-            <span class="project-desc">- AI & Data Science Intern (Computer Vision, YOLOv8, Pose Estimation)</span>
+            <span class="item-title">Middle East Technical University</span>
+            <span class="item-desc">B.Sc. in Computer Engineering</span>
+            <span class="item-meta">[Expected June 2027]</span>
+        </li>
+        <li>
+            <span class="item-title">Bilkent University</span>
+            <span class="item-desc">B.Sc. in Computer Engineering (Transferred to METU)</span>
+            <span class="item-meta">[2019 - 2025]</span>
+        </li>
+    </ul>
+
+    <h2>Experience</h2>
+    <ul class="list-container">
+        <li>
+            <span class="item-title">Güriş Teknoloji A.Ş.</span>
+            <div class="item-desc">
+                AI & Data Science Intern
+                <ul class="bullet-points">
+                    <li>Developed computer vision pipelines using YOLOv8 and MediaPipe for pose estimation and damage
+                        detection.</li>
+                    <li>Analyzed drone-recorded videos for turbine diagnostics and processed boroscope images for gear
+                        damage detection.</li>
+                    <li>Gained hands-on deployment experience using Docker and Grafana.</li>
+                </ul>
+            </div>
+            <span class="item-meta">[July - Aug 2024]</span>
         </li>
     </ul>
 
     <h2>Selected Projects</h2>
-    <ul class="project-list">
+    <ul class="list-container">
         <li>
-            <span class="project-name">Steins;Gate Sim</span>
-            <span class="project-desc">- Multi-agent persona chat simulation.</span>
-            <span class="tech-stack">[LangChain, Streamlit]</span>
+            <a href="https://github.com/yaslitasomer/DocuMind" target="_blank" class="item-title">DocuMind ↗</a>
+            <span class="item-desc">- AI-assisted document processing and analysis tool.</span>
+            <span class="item-meta">[Python]</span>
         </li>
         <li>
-            <span class="project-name">Local Study Assistant</span>
-            <span class="project-desc">- RAG application utilizing local LLMs.</span>
-            <span class="tech-stack">[LangChain, Streamlit]</span>
+            <a href="https://github.com/yaslitasomer/study-assistant-rag" target="_blank"
+                class="item-title">study-assistant-rag ↗</a>
+            <span class="item-desc">- Local RAG application utilizing LLMs for efficient document querying.</span>
+            <span class="item-meta">[Python, LangChain]</span>
         </li>
         <li>
-            <span class="project-name">Review Agent</span>
-            <span class="project-desc">- AI-assisted literature review software.</span>
-            <span class="tech-stack">[Python]</span>
+            <a href="https://github.com/yaslitasomer/PixelForge" target="_blank" class="item-title">PixelForge ↗</a>
+            <span class="item-desc">- Digital image manipulation and processing tool.</span>
+            <span class="item-meta">[Python]</span>
         </li>
         <li>
-            <span class="project-name">Prime Tracker</span>
-            <span class="project-desc">- Web application to calculate prime numbers and ordinal positions.</span>
-            <span class="tech-stack">[Python, PyScript]</span>
+            <span class="item-title">HabitAct App</span>
+            <span class="item-desc">- Habit tracking mobile application with full backend integration.</span>
+            <span class="item-meta">[Java, Android Studio, SQL]</span>
+        </li>
+    </ul>
+
+    <h2>Open Source & Study Logs</h2>
+    <ul class="list-container">
+        <li>
+            <a href="https://github.com/yaslitasomer/haskell-alchemy" target="_blank" class="item-title">haskell-alchemy
+                ↗</a>
+            <span class="item-desc">- Functional programming experiments and implementations.</span>
+            <span class="item-meta">[Jupyter Notebook]</span>
+        </li>
+        <li>
+            <a href="https://github.com/yaslitasomer/ml-zoomcamp" target="_blank" class="item-title">ml-zoomcamp ↗</a>
+            <span class="item-desc">- Machine learning coursework and practical projects.</span>
+            <span class="item-meta">[Jupyter Notebook]</span>
+        </li>
+    </ul>
+
+    <h2>Achievements & Involvements</h2>
+    <ul class="list-container">
+        <li>
+            <span class="item-title">YKS Ranking</span>
+            <span class="item-desc">- Placed 692nd in Turkey among 1.9 million students.</span>
+        </li>
+        <li>
+            <span class="item-title">L'Oreal Boost Program</span>
+            <span class="item-desc">- Completed future-skills courses including data visualization & analysis.</span>
+            <span class="item-meta">[2023]</span>
+        </li>
+        <li>
+            <span class="item-title">ACM Student Member</span>
+            <span class="item-desc">- Association for Computing Machinery.</span>
+            <span class="item-meta">[Feb 2025 - Present]</span>
         </li>
     </ul>
 
     <hr style="border: 0; border-top: 1px solid #30363d; margin: 30px 0;">
 
     <p style="font-size: 0.9em; color: #8b949e;">
-        also into: piano, pixel art (aseprite), learning german, and single-player games.
+        also into: piano, pixel art (aseprite), objectivist philosophy, and single-player games.
     </p>
 
 </body>
