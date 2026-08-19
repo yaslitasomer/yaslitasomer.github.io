@@ -11,12 +11,11 @@
         body {
             background-color: #0d1117;
             color: #c9d1d9;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'JetBrains Mono', Courier, monospace;
             line-height: 1.6;
             margin: 0 auto;
             max-width: 850px;
             padding: 40px 20px;
-            font-family: 'JetBrains Mono', monospace;
         }
 
         /* Typography and Links */
@@ -70,7 +69,6 @@
             color: #e6edf3;
         }
 
-        /* Linkli başlıklar için özel ayar */
         a.item-title {
             border-bottom: 1px dashed #e6edf3;
         }
@@ -104,10 +102,27 @@
             display: list-item;
         }
 
+        /* Animasyonlar */
         .cursor {
             display: inline-block;
             color: #58a6ff;
             animation: blink 1s step-start infinite;
+        }
+
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            vertical-align: bottom;
+            width: 13ch;
+            /* "Ömer Yaslıtaş" tam 13 karakter uzunluğunda */
+            animation: typing 1s steps(13, end);
+        }
+
+        .fade-in {
+            opacity: 0;
+            /* Daktilo efekti bittikten (1s) sonra yavaşça belirecek */
+            animation: fadeIn 1s ease-out 1s forwards;
         }
 
         @keyframes blink {
@@ -115,141 +130,178 @@
                 opacity: 0;
             }
         }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 13ch;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Ömer Yaslıtaş <span class="cursor">_</span></h1>
-    <div class="contact-links">
-        [<a href="mailto:omer.yaslitas@metu.edu.tr">email ↗</a>]
-        [<a href="https://github.com/yaslitasomer" target="_blank">github ↗</a>]
-        [<a href="https://www.linkedin.com/in/%C3%B6mer-yasl%C4%B1ta%C5%9F-266873208/" target="_blank">linkedin ↗</a>]
+    <!-- Typewriter Title -->
+    <h1><span class="typewriter-text">Ömer Yaslıtaş</span><span class="cursor">_</span></h1>
+
+    <!-- Fade-in Content Wrapper -->
+    <div class="fade-in">
+        <div class="contact-links">
+            [<a href="mailto:omer.yaslitas@metu.edu.tr">email ↗</a>]
+            [<a href="https://github.com/yaslitasomer" target="_blank">github ↗</a>]
+            [<a href="https://www.linkedin.com/in/%C3%B6mer-yasl%C4%B1ta%C5%9F-266873208/" target="_blank">linkedin
+                ↗</a>]
+        </div>
+
+        <p>
+            Computer Engineering student. My primary focus lies at the intersection of Artificial Intelligence, Data
+            Science, and Machine Learning. I enjoy building real-world AI applications, experimenting with local LLMs,
+            and
+            processing 3D data architectures.
+        </p>
+
+        <p>
+            <b>languages:</b> python · java · c++ · c · sql · haskell · verilog<br>
+            <b>frameworks & tools:</b> langchain · streamlit · docker · grafana · android studio<br>
+            <b>spoken:</b> english (proficient) · turkish (native) · russian (beginner) · german (learning)
+        </p>
+
+        <hr style="border: 0; border-top: 1px solid #30363d; margin: 30px 0;">
+
+        <h2>Education</h2>
+        <ul class="list-container">
+            <li>
+                <span class="item-title">Middle East Technical University</span>
+                <span class="item-desc">- B.Sc. in Computer Engineering</span>
+                <span class="item-meta">[Expected June 2027]</span>
+            </li>
+            <li>
+                <span class="item-title">Bilkent University</span>
+                <span class="item-desc">- B.Sc. in Computer Engineering (Transferred to METU)</span>
+                <span class="item-meta">[2019 - 2025]</span>
+            </li>
+        </ul>
+
+        <h2>Experience</h2>
+        <ul class="list-container">
+            <li>
+                <span class="item-title">Güriş Teknoloji A.Ş.</span>
+                <div class="item-desc">
+                    AI & Data Science Intern
+                    <ul class="bullet-points">
+                        <li>Developed computer vision pipelines using YOLOv8 and MediaPipe for pose estimation and
+                            damage
+                            detection.</li>
+                        <li>Analyzed drone-recorded videos for turbine diagnostics and processed boroscope images for
+                            gear
+                            damage detection.</li>
+                        <li>Gained hands-on deployment experience using Docker and Grafana.</li>
+                    </ul>
+                </div>
+                <span class="item-meta">[July - Aug 2024]</span>
+            </li>
+        </ul>
+
+        <h2>Selected Projects</h2>
+        <ul class="list-container">
+            <li>
+                <a href="https://github.com/yaslitasomer/DocuMind" target="_blank" class="item-title">DocuMind ↗</a>
+                <span class="item-desc">- AI-assisted document processing and analysis tool.</span>
+                <span class="item-meta">[Python]</span>
+            </li>
+            <li>
+                <span class="item-title">HabitAct App</span>
+                <span class="item-desc">- Habit tracking mobile application with full backend integration.</span>
+                <span class="item-meta">[Java, Android Studio, SQL]</span>
+            </li>
+        </ul>
+
+        <h2>Open Source & Study Logs</h2>
+        <ul class="list-container">
+            <li>
+                <a href="https://github.com/yaslitasomer/intro-to-RAG" target="_blank" class="item-title">intro-to-RAG
+                    ↗</a>
+                <span class="item-desc">- Foundational experiments and implementations of Retrieval-Augmented Generation
+                    architectures.</span>
+                <span class="item-meta">[Jupyter Notebook, Python]</span>
+            </li>
+            <li>
+                <a href="https://github.com/yaslitasomer/ml-zoomcamp" target="_blank" class="item-title">ml-zoomcamp
+                    ↗</a>
+                <span class="item-desc">- Machine learning coursework, models, and practical projects.</span>
+                <span class="item-meta">[Jupyter Notebook]</span>
+            </li>
+            <li>
+                <a href="https://github.com/yaslitasomer/Python_Skills_Log" target="_blank"
+                    class="item-title">Python_Skills_Log ↗</a>
+                <span class="item-desc">- Continuous learning log, code snippets, and practical exercises for
+                    Python.</span>
+                <span class="item-meta">[Jupyter Notebook, Python]</span>
+            </li>
+            <li>
+                <a href="https://github.com/yaslitasomer/SQL_Skills_Log" target="_blank"
+                    class="item-title">SQL_Skills_Log
+                    ↗</a>
+                <span class="item-desc">- Collection of database queries, exercises, and SQL skill tracking.</span>
+                <span class="item-meta">[Jupyter Notebook, SQL]</span>
+            </li>
+            <li>
+                <a href="https://github.com/yaslitasomer/DSA-Weiss-cpp" target="_blank" class="item-title">DSA-Weiss-cpp
+                    ↗</a>
+                <span class="item-desc">- Data structures and algorithm implementations in C++ based on the Weiss
+                    textbook.</span>
+                <span class="item-meta">[C++]</span>
+            </li>
+            <li>
+                <a href="https://github.com/yaslitasomer/haskell-alchemy" target="_blank"
+                    class="item-title">haskell-alchemy
+                    ↗</a>
+                <span class="item-desc">- Functional programming experiments and custom implementations.</span>
+                <span class="item-meta">[Haskell]</span>
+            </li>
+        </ul>
+
+        <h2>Achievements & Involvements</h2>
+        <ul class="list-container">
+            <li>
+                <span class="item-title">YKS Ranking</span>
+                <span class="item-desc">- Placed 692nd in Turkey among 1.9 million students.</span>
+            </li>
+            <li>
+                <span class="item-title">L'Oreal Boost Program</span>
+                <span class="item-desc">- Completed future-skills courses including data visualization &
+                    analysis.</span>
+                <span class="item-meta">[2023]</span>
+            </li>
+            <li>
+                <span class="item-title">ACM Student Member</span>
+                <span class="item-desc">- Association for Computing Machinery.</span>
+                <span class="item-meta">[Feb 2025 - Present]</span>
+            </li>
+        </ul>
+
+        <hr style="border: 0; border-top: 1px solid #30363d; margin: 30px 0;">
+
+        <p style="font-size: 0.9em; color: #8b949e;">
+            also into: piano, pixel art (aseprite), and single-player games.
+        </p>
     </div>
-
-    <p>
-        Computer Engineering student. My primary focus lies at the intersection of Artificial Intelligence, Data
-        Science, and Machine Learning. I enjoy building real-world AI applications, experimenting with local LLMs, and
-        processing 3D data architectures.
-    </p>
-
-    <p>
-        <b>languages:</b> python · java · c++ · c · sql · haskell · verilog<br>
-        <b>frameworks & tools:</b> langchain · streamlit · docker · grafana · android studio<br>
-        <b>spoken:</b> english (proficient) · turkish (native) · russian (beginner) · german (learning)
-    </p>
-
-    <hr style="border: 0; border-top: 1px solid #30363d; margin: 30px 0;">
-
-    <h2>Education</h2>
-    <ul class="list-container">
-        <li>
-            <span class="item-title">Middle East Technical University</span>
-            <span class="item-desc">- B.Sc. in Computer Engineering</span>
-            <span class="item-meta">[Expected June 2027]</span>
-        </li>
-        <li>
-            <span class="item-title">Bilkent University</span>
-            <span class="item-desc">B.Sc. in Computer Engineering (Transferred to METU)</span>
-            <span class="item-meta">[2019 - 2025]</span>
-        </li>
-    </ul>
-
-    <h2>Experience</h2>
-    <ul class="list-container">
-        <li>
-            <span class="item-title">Güriş Teknoloji A.Ş.</span>
-            <div class="item-desc">
-                AI & Data Science Intern
-                <ul class="bullet-points">
-                    <li>Developed computer vision pipelines using YOLOv8 and MediaPipe for pose estimation and damage
-                        detection.</li>
-                    <li>Analyzed drone-recorded videos for turbine diagnostics and processed boroscope images for gear
-                        damage detection.</li>
-                    <li>Gained hands-on deployment experience using Docker and Grafana.</li>
-                </ul>
-            </div>
-            <span class="item-meta">[July - Aug 2024]</span>
-        </li>
-    </ul>
-
-    <h2>Selected Projects</h2>
-    <ul class="list-container">
-        <li>
-            <a href="https://github.com/yaslitasomer/DocuMind" target="_blank" class="item-title">DocuMind ↗</a>
-            <span class="item-desc">- AI-assisted document processing and analysis tool.</span>
-            <span class="item-meta">[Python]</span>
-        </li>
-        <li>
-            <span class="item-title">HabitAct App</span>
-            <span class="item-desc">- Habit tracking mobile application with full backend integration.</span>
-            <span class="item-meta">[Java, Android Studio, SQL]</span>
-        </li>
-    </ul>
-
-    <h2>Open Source & Study Logs</h2>
-    <ul class="list-container">
-        <li>
-            <a href="https://github.com/yaslitasomer/intro-to-RAG" target="_blank" class="item-title">intro-to-RAG ↗</a>
-            <span class="item-desc">- Foundational experiments and implementations of Retrieval-Augmented Generation
-                architectures.</span>
-            <span class="item-meta">[Jupyter Notebook, Python]</span>
-        </li>
-        <li>
-            <a href="https://github.com/yaslitasomer/ml-zoomcamp" target="_blank" class="item-title">ml-zoomcamp ↗</a>
-            <span class="item-desc">- Machine learning coursework, models, and practical projects.</span>
-            <span class="item-meta">[Jupyter Notebook]</span>
-        </li>
-        <li>
-            <a href="https://github.com/yaslitasomer/Python_Skills_Log" target="_blank"
-                class="item-title">Python_Skills_Log ↗</a>
-            <span class="item-desc">- Continuous learning log, code snippets, and practical exercises for Python.</span>
-            <span class="item-meta">[Jupyter Notebook, Python]</span>
-        </li>
-        <li>
-            <a href="https://github.com/yaslitasomer/SQL_Skills_Log" target="_blank" class="item-title">SQL_Skills_Log
-                ↗</a>
-            <span class="item-desc">- Collection of database queries, exercises, and SQL skill tracking.</span>
-            <span class="item-meta">[Jupyter Notebook, SQL]</span>
-        </li>
-        <li>
-            <a href="https://github.com/yaslitasomer/DSA-Weiss-cpp" target="_blank" class="item-title">DSA-Weiss-cpp
-                ↗</a>
-            <span class="item-desc">- Data structures and algorithm implementations in C++ based on the Weiss
-                textbook.</span>
-            <span class="item-meta">[C++]</span>
-        </li>
-        <li>
-            <a href="https://github.com/yaslitasomer/haskell-alchemy" target="_blank" class="item-title">haskell-alchemy
-                ↗</a>
-            <span class="item-desc">- Functional programming experiments and custom implementations.</span>
-            <span class="item-meta">[Haskell]</span>
-        </li>
-    </ul>
-
-    <h2>Achievements & Involvements</h2>
-    <ul class="list-container">
-        <li>
-            <span class="item-title">YKS Ranking</span>
-            <span class="item-desc">- Placed 692nd in Turkey among 1.9 million students.</span>
-        </li>
-        <li>
-            <span class="item-title">L'Oreal Boost Program</span>
-            <span class="item-desc">- Completed future-skills courses including data visualization & analysis.</span>
-            <span class="item-meta">[2023]</span>
-        </li>
-        <li>
-            <span class="item-title">ACM Student Member</span>
-            <span class="item-desc">- Association for Computing Machinery.</span>
-            <span class="item-meta">[Feb 2025 - Present]</span>
-        </li>
-    </ul>
-
-    <hr style="border: 0; border-top: 1px solid #30363d; margin: 30px 0;">
-
-    <p style="font-size: 0.9em; color: #8b949e;">
-        also into: piano, pixel art (aseprite), and single-player games.
-    </p>
 
 </body>
 
